@@ -1,4 +1,4 @@
-const CACHE = "plazos-oj-v1";
+const CACHE = "plazos-oj-v2";
 const FILES = [
   "./calculadora_judicial_corrientes.html",
   "./manifest.json"
