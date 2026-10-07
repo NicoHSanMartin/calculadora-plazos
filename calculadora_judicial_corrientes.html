@@ -266,7 +266,7 @@ html, body {
   <div id="zonaDetalle"></div>
 
   <div class="footer">
-    Calendario Superintendencia Cámara Federal Corrientes 2026<br>
+    Calendario Superintendencia Cámara Federal Corrientes 2026 · 2027 provisorio<br>
     Solo orientativo — verifique el expediente
   </div>
 </div>
@@ -305,13 +305,13 @@ const FERIADOS = [
   // OCTUBRE
   { f:'2026-10-12', n:'Diversidad Cultural', t:'nacional' },
   // NOVIEMBRE
+  { f:'2026-11-09', n:'Feriado excepcional (visita del Papa)', t:'nacional' },
+  { f:'2026-11-16', n:'Día del Judicial', t:'nacional' },
   { f:'2026-11-23', n:'Soberanía Nacional (trasladado)', t:'nacional' },
   // DICIEMBRE
   { f:'2026-12-07', n:'Día no laborable', t:'nolabor' },
   { f:'2026-12-08', n:'Inmaculada Concepción', t:'nacional' },
   { f:'2026-12-25', n:'Navidad', t:'nacional' },
-  // 2027
-  { f:'2027-01-01', n:'Año Nuevo 2027', t:'nacional' },
   // CORRIENTES CAPITAL (jurisdiccionales inhábiles)
   { f:'2026-03-23', n:'Feriado jurisdiccional Corrientes', t:'nacional' },
   { f:'2026-07-10', n:'Feriado jurisdiccional Corrientes', t:'nacional' },
@@ -319,6 +319,26 @@ const FERIADOS = [
   { f:'2026-07-27', n:'Compensación feria (feriado 16/07)', t:'nacional' },
   { f:'2026-09-24', n:'Feriado jurisdiccional Corrientes', t:'nacional' },
   { f:'2026-12-07', n:'Feriado jurisdiccional Corrientes', t:'nacional' },
+  // ── 2027 ─────────────────────────────────────────────
+  // Nacionales según Ley 27.399 (con traslados); días turísticos 2027 aún sin definir oficialmente
+  { f:'2027-01-01', n:'Año Nuevo', t:'nacional' },
+  { f:'2027-02-08', n:'Carnaval', t:'nacional' },
+  { f:'2027-02-09', n:'Carnaval', t:'nacional' },
+  { f:'2027-03-24', n:'Memoria, Verdad y Justicia', t:'nacional' },
+  { f:'2027-03-25', n:'Jueves Santo (día no laborable)', t:'nolabor' },
+  { f:'2027-03-26', n:'Viernes Santo', t:'nacional' },
+  { f:'2027-04-02', n:'Veteranos de Malvinas', t:'nacional' },
+  { f:'2027-05-25', n:'Revolución de Mayo', t:'nacional' },
+  { f:'2027-06-21', n:'Gral. Güemes (trasladado del 17/06)', t:'nacional' },
+  { f:'2027-07-09', n:'Día de la Independencia', t:'nacional' },
+  { f:'2027-08-16', n:'Gral. San Martín (trasladado del 17/08)', t:'nacional' },
+  { f:'2027-10-11', n:'Diversidad Cultural (trasladado del 12/10)', t:'nacional' },
+  { f:'2027-11-16', n:'Día del Judicial', t:'nacional' },
+  { f:'2027-12-08', n:'Inmaculada Concepción', t:'nacional' },
+  // Corrientes (jurisdiccionales de fecha fija)
+  { f:'2027-07-16', n:'Feriado jurisdiccional Corrientes', t:'nacional' },
+  { f:'2027-09-24', n:'Feriado jurisdiccional Corrientes', t:'nacional' },
+  { f:'2027-12-07', n:'Feriado jurisdiccional Corrientes', t:'nacional' },
 ];
 
 // ── FERIADOS LOCALES → solo nota informativa, NO inhábiles ─
@@ -326,13 +346,15 @@ const FERIADOS = [
 const FERIADOS_LOCALES = [
   { f:'2026-09-12', n:'Feriado jurisdiccional', loc:'Goya' },
   { f:'2026-10-07', n:'Feriado jurisdiccional', loc:'Goya' },
+  { f:'2027-09-12', n:'Feriado jurisdiccional', loc:'Goya' },
+  { f:'2027-10-07', n:'Feriado jurisdiccional', loc:'Goya' },
 ];
 
 // ── FERIAS JUDICIALES ────────────────────────────────────
 const FERIAS = [
   { desde:'2026-01-01', hasta:'2026-01-31', n:'Feria de Verano' },
   { desde:'2026-07-13', hasta:'2026-07-25', n:'Feria de Invierno' },
-  { desde:'2027-01-01', hasta:'2027-01-31', n:'Feria de Verano 2027' },
+  { desde:'2027-01-01', hasta:'2027-01-31', n:'Feria de Verano' },
 ];
 
 const F_SET = new Set(FERIADOS.map(x => x.f));
