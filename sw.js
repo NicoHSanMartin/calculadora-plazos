@@ -1,7 +1,10 @@
 const CACHE = "plazos-oj-v2";
 const FILES = [
   "./calculadora_judicial_corrientes.html",
-  "./manifest.json"
+  "./manifest.json",
+  "./icon-192.png",
+  "./icon-512.png",
+  "./favicon.ico"
 ];
 
 self.addEventListener("install", function(e) {
@@ -20,10 +23,18 @@ self.addEventListener("activate", function(e) {
   self.clients.claim();
 });
 
+// Network first: siempre intenta traer la versión nueva; si no hay conexión, usa la guardada.
 self.addEventListener("fetch", function(e) {
+  if (e.request.method !== "GET") return;
   e.respondWith(
-    caches.match(e.request).then(function(cached) {
-      return cached || fetch(e.request).catch(function() { return cached; });
-    })
+    fetch(e.request, { cache: "no-cache" })
+      .then(function(resp) {
+        if (resp && resp.ok) {
+          const copia = resp.clone();
+          caches.open(CACHE).then(function(c) { c.put(e.request, copia); });
+        }
+        return resp;
+      })
+      .catch(function() { return caches.match(e.request); })
   );
 });
